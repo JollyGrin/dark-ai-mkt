@@ -4,10 +4,12 @@
 	--color-brand-fore: #fff;
 	--color-brand-back: #131313;
 	--color-brand-highlight: #89a5a9;
+	--font-geist: 'Geist', sans-serif;
 }
 
 html,
 body {
 	background-color: var(--color-brand-back);
 	color: var(--color-brand-fore);
+	font-family: var(--font-geist);
 }
