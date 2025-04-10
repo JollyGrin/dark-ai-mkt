@@ -24,7 +24,7 @@
 	</div>
 </div>
 
-<div class="container mx-auto">
+<div class="container mx-auto mt-6">
 	<div
 		class="border-b-brand-fore/10 text-brand-highlight hidden grid-cols-[3fr_1fr_1fr_1fr] gap-1 border-b-1 pb-1 text-xs font-bold tracking-wide uppercase md:grid"
 	>

@@ -18,6 +18,6 @@
 		</div>
 	</div>
 </div>
-<div class="relative z-50 h-0 w-full">
+<div class="relative z-20 h-0 w-full">
 	<ShineBorder />
 </div>
