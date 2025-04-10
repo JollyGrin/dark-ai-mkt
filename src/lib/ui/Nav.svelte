@@ -12,8 +12,14 @@
 	<div
 		class="text-brand-highlight container mx-auto flex items-center justify-center font-bold sm:justify-between"
 	>
-		<a href="https://www.darkresearch.ai" class="hidden sm:inline"
-			>$DARK <span class="text-xs font-thin">plays <i>Dark Forest</i></span></a
+		<a href="https://www.darkresearch.ai" class="group hidden items-center sm:flex">
+			<img
+				src="https://pbs.twimg.com/profile_images/1908669567083163649/fo1DCESl_400x400.jpg"
+				alt="dark research ai"
+				class="w-6 transition-all group-hover:scale-125"
+			/>
+			<span class="text-brand-fore z-20 tracking-widest"> DARK </span>
+			<span class="ml-2 text-xs font-thin">plays <i>Dark Forest</i></span></a
 		>
 		<div class="flex items-center gap-4">
 			<a
