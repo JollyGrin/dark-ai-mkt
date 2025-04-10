@@ -3,8 +3,8 @@
 	import { page } from '$app/state';
 	import ShineBorder from '$lib/components/ShineBorder.svelte';
 
-	const isMarketplace = page.url.pathname === '/';
-	const isShop = page.url.pathname === '/shop';
+	const isMarketplace = page.url.pathname === base + '/';
+	const isShop = page.url.pathname === base + '/shop';
 </script>
 
 <div class="bg-brand-fore/0 px-2 py-4">
@@ -12,12 +12,12 @@
 		<p>$DARK</p>
 		<p>{page.url.pathname}</p>
 		<div class="flex items-center gap-4">
-			<a href="{base}/">MarketPlace</a>
-			<a href="{base}/shop">Shop</a>
+			<a href="{base}/" class:text-brand-fore={isMarketplace}>MarketPlace</a>
+			<a href="{base}/shop" class:text-brand-fore={isShop}>Shop</a>
 			<div class="bg-brand-highlight h-6 w-6 rounded-full"></div>
 		</div>
 	</div>
 </div>
-<div class="relative h-0 w-full">
+<div class="relative z-50 h-0 w-full">
 	<ShineBorder />
 </div>

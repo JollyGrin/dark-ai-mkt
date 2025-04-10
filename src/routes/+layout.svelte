@@ -1,7 +1,11 @@
 <script lang="ts">
+	import Nav from '$lib/ui/Nav.svelte';
 	import '../app.css';
 
 	let { children } = $props();
 </script>
 
-{@render children()}
+<Nav />
+<div class="h-[calc(100vh-59px)] overflow-y-scroll">
+	{@render children()}
+</div>

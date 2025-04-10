@@ -7,8 +7,6 @@
 	const agents = Array.from({ length: 20 }).map((_, i) => ({ name: `Agent${i}` }));
 </script>
 
-<Nav />
-
 <div class="container mx-auto">
 	<div class="py-2">
 		{#snippet eachSnippet(item: any)}
@@ -40,14 +38,16 @@
 	{#each agents as agent, i (i)}
 		{@const isEven = i % 2 == 0}
 		<div
-			class="my-1 grid grid-cols-1 gap-1 py-2 md:grid-cols-[3fr_1fr_1fr_1fr]"
+			class="my-1 grid grid-cols-1 items-center gap-1 py-2 md:grid-cols-[3fr_1fr_1fr_1fr]"
 			class:mt-0={i === 0}
 			class:bg-gradient-to-l={isEven}
 			class:to-brand-back={isEven}
 			class:from-slate-800={isEven}
 		>
 			<!-- AGENT -->
-			<div class="border-r-brand-fore/10 flex items-center gap-4 border-r-1">
+			<div
+				class="border-r-brand-fore/10 flex items-center justify-center gap-4 border-r-1 md:justify-start"
+			>
 				<div class="relative">
 					<img
 						alt="ai agent"
@@ -71,7 +71,7 @@
 			</div>
 
 			<!-- PERFORMANCE -->
-			<span> performance tags </span>
+			<span> tags </span>
 			<!-- SHARES -->
 			<span> shares </span>
 			<!-- PRICE -->
