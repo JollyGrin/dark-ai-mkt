@@ -18,6 +18,12 @@
 </script>
 
 {#snippet rightBody()}
+	<button
+		class="absolute top-2 right-2 cursor-pointer rounded-full bg-black/30 px-3 py-2 transition-all hover:scale-125 sm:bg-transparent"
+		onclick={onClose}
+	>
+		<X class="w-5" />
+	</button>
 	<p class="text-2xl font-bold">Buy Planet</p>
 	<p class="text-brand-highlight text-xs">
 		0.09 {SOL_SYMBOL} <span class="opacity-30">~$355 USDC</span>
@@ -60,16 +66,16 @@
 <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
 	<!-- Modal Dialog -->
 	<dialog
-		class="bg-brand-back text-brand-fore mx-4 h-full max-h-[400px] w-full max-w-2xl overflow-clip rounded-lg p-0 shadow-lg open:block"
+		class="bg-brand-back text-brand-fore mx-4 h-full w-full max-w-2xl rounded-lg p-0 shadow-lg open:block md:max-h-[400px]"
 		open
 		aria-labelledby="modal-title"
 	>
 		<!-- Modal Body -->
 		<div class="grid h-full grid-cols-1 md:grid-cols-2">
-			<div class="relative overflow-clip">
+			<div class="relative overflow-clip sm:rounded-l">
 				<video src="{base}/planet.mp4" muted autoplay loop class="scale-150"></video>
 			</div>
-			<div class="flex flex-col px-6 py-4">
+			<div class="relative flex flex-col overflow-auto px-6 py-4">
 				{@render rightBody()}
 			</div>
 		</div>

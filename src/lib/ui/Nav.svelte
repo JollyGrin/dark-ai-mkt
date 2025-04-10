@@ -9,8 +9,10 @@
 </script>
 
 <div class="bg-brand-fore/0 px-2 py-4">
-	<div class="text-brand-highlight container mx-auto flex items-center justify-between font-bold">
-		<a href="https://www.darkresearch.ai"
+	<div
+		class="text-brand-highlight container mx-auto flex items-center justify-center font-bold sm:justify-between"
+	>
+		<a href="https://www.darkresearch.ai" class="hidden sm:inline"
 			>$DARK <span class="text-xs font-thin">plays <i>Dark Forest</i></span></a
 		>
 		<div class="flex items-center gap-4">
