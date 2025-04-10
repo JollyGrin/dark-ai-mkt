@@ -36,5 +36,7 @@
 	<div class="mt-4 grid grid-cols-2 gap-2">
 		{@render tile('Buy Planet', '0.05', '/planet.mp4')}
 		{@render tile('Buy Artifact', '0.09', '/artifact.mp4')}
+		{@render tile('Reveal map', '0.03', '/artifact.mp4')}
+		{@render tile('New spawn point', '0.15', '/planet.mp4')}
 	</div>
 </div>
