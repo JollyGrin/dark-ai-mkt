@@ -7,7 +7,8 @@
 </script>
 
 <div class="container mx-auto">
-	<div class="py-2">
+	<!-- MARQUEE -->
+	<div class="mb-6 py-6">
 		{#snippet eachSnippet(item: any)}
 			<div
 				class="mx-1 flex aspect-[1/1.25] w-[125px] flex-col justify-end gap-2 rounded-lg bg-cover bg-no-repeat p-1 transition-all hover:saturate-150"
@@ -22,9 +23,8 @@
 		{/snippet}
 		<Marquee items={agents.splice(0, 5)} {eachSnippet} />
 	</div>
-</div>
 
-<div class="container mx-auto mt-6">
+	<!-- TABLE HEADER -->
 	<div
 		class="border-b-brand-fore/10 text-brand-highlight hidden grid-cols-[3fr_1fr_1fr_1fr] gap-1 border-b-1 pb-1 text-xs font-bold tracking-wide uppercase md:grid"
 	>
@@ -34,6 +34,7 @@
 		<span> Prices </span>
 	</div>
 
+	<!-- AGENT LIST -->
 	{#each agents as agent, i (i)}
 		{@const isEven = i % 2 == 0}
 		<Record isFirst={i == 0} {isEven} {agent} />
