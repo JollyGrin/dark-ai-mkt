@@ -2,7 +2,7 @@
 	import { base } from '$app/paths';
 	import { page } from '$app/state';
 	import ShineBorder from '$lib/components/ShineBorder.svelte';
-	import { FileQuestion, ShieldQuestion } from 'lucide-svelte';
+	import { BadgeInfo, ShieldQuestion } from 'lucide-svelte';
 
 	const isMarketplace = $derived(page.url.pathname === base + '/');
 	const isShop = $derived(page.url.pathname === base + '/shop');
@@ -24,11 +24,7 @@
 				MarketPlace
 			</a>
 			<a href="{base}/shop" class:text-brand-fore={isShop} class:hover:opacity-70={!isShop}>Shop</a>
-			<a
-				href="https://x.com/edgarpavlovsky/status/1909400326828179674?s=46"
-				target="_blank"
-				class="text-xs font-thin hover:opacity-70"><ShieldQuestion /></a
-			>
+			<a href="{base}/about" class="text-xs font-thin hover:opacity-70"><BadgeInfo /></a>
 			<button
 				class="border-brand-highlight/50 text-brand-fore hover:border-brand-fore rounded border-1 px-2 py-1 font-normal transition-all"
 			>
