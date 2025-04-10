@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import Marquee from '$lib/components/Marquee.svelte';
 	import ShineBorder from '$lib/components/ShineBorder.svelte';
 	import { SOL_SYMBOL } from '$lib/symbols';
@@ -12,7 +13,7 @@
 		<p>$DARK</p>
 		<div class="flex items-center gap-4">
 			<p>Marketplace</p>
-			<p>Powerup Shop</p>
+			<a href="{base}/shop">Powerup Shop</a>
 			<div class="bg-brand-highlight h-6 w-6 rounded-full"></div>
 		</div>
 	</div>
