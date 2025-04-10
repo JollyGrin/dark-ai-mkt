@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Marquee from '$lib/components/Marquee.svelte';
 	import { SOL_SYMBOL } from '$lib/symbols';
-	import Nav from '$lib/ui/Nav.svelte';
 	import { MoveDownRight, MoveUpRight } from 'lucide-svelte';
 
 	const agents = Array.from({ length: 20 }).map((_, i) => ({ name: `Agent${i}` }));

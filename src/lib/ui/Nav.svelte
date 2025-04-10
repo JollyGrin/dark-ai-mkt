@@ -3,8 +3,8 @@
 	import { page } from '$app/state';
 	import ShineBorder from '$lib/components/ShineBorder.svelte';
 
-	const isMarketplace = page.url.pathname === base + '/';
-	const isShop = page.url.pathname === base + '/shop';
+	const isMarketplace = $derived(page.url.pathname === base + '/');
+	const isShop = $derived(page.url.pathname === base + '/shop');
 </script>
 
 <div class="bg-brand-fore/0 px-2 py-4">

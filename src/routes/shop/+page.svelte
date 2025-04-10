@@ -3,6 +3,4 @@
 	import Nav from '$lib/ui/Nav.svelte';
 </script>
 
-<Nav />
-
 <a href="{base}/">home</a>
