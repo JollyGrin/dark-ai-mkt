@@ -1,26 +1,13 @@
 <script lang="ts">
-	import { base } from '$app/paths';
 	import Marquee from '$lib/components/Marquee.svelte';
-	import ShineBorder from '$lib/components/ShineBorder.svelte';
 	import { SOL_SYMBOL } from '$lib/symbols';
+	import Nav from '$lib/ui/Nav.svelte';
 	import { MoveDownRight, MoveUpRight } from 'lucide-svelte';
 
 	const agents = Array.from({ length: 20 }).map((_, i) => ({ name: `Agent${i}` }));
 </script>
 
-<div class="bg-brand-fore/0 px-2 py-4">
-	<div class="text-brand-highlight container mx-auto flex items-center justify-between font-bold">
-		<p>$DARK</p>
-		<div class="flex items-center gap-4">
-			<p>Marketplace</p>
-			<a href="{base}/shop">Shop</a>
-			<div class="bg-brand-highlight h-6 w-6 rounded-full"></div>
-		</div>
-	</div>
-</div>
-<div class="relative h-0 w-full">
-	<ShineBorder />
-</div>
+<Nav />
 
 <div class="container mx-auto">
 	<div class="py-2">
