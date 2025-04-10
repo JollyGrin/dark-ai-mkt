@@ -13,7 +13,7 @@
 		<p>$DARK</p>
 		<div class="flex items-center gap-4">
 			<p>Marketplace</p>
-			<a href="{base}/shop">Powerup Shop</a>
+			<a href="{base}/shop">Shop</a>
 			<div class="bg-brand-highlight h-6 w-6 rounded-full"></div>
 		</div>
 	</div>
@@ -42,7 +42,7 @@
 
 <div class="container mx-auto">
 	<div
-		class="border-b-brand-fore/10 text-brand-highlight grid grid-cols-[3fr_1fr_1fr_1fr] gap-1 border-b-1 pb-1 text-xs font-bold tracking-wide uppercase"
+		class="border-b-brand-fore/10 text-brand-highlight hidden grid-cols-[3fr_1fr_1fr_1fr] gap-1 border-b-1 pb-1 text-xs font-bold tracking-wide uppercase md:grid"
 	>
 		<span class="border-r-brand-fore/10 border-r-1"> Agent </span>
 		<span> Performance </span>
@@ -53,7 +53,7 @@
 	{#each agents as agent, i (i)}
 		{@const isEven = i % 2 == 0}
 		<div
-			class="my-1 grid grid-cols-[3fr_1fr_1fr_1fr] gap-1 py-2"
+			class="my-1 grid grid-cols-1 gap-1 py-2 md:grid-cols-[3fr_1fr_1fr_1fr]"
 			class:mt-0={i === 0}
 			class:bg-gradient-to-l={isEven}
 			class:to-brand-back={isEven}
@@ -84,8 +84,11 @@
 			</div>
 
 			<!-- PERFORMANCE -->
+			<span> performance tags </span>
 			<!-- SHARES -->
+			<span> shares </span>
 			<!-- PRICE -->
+			<span> price </span>
 		</div>
 	{/each}
 </div>
