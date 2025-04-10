@@ -1,0 +1,13 @@
+@import 'tailwindcss';
+
+@theme {
+	--color-brand-fore: #fff;
+	--color-brand-back: #131313;
+	--color-brand-highlight: #89a5a9;
+}
+
+html,
+body {
+	background-color: var(--color-brand-back);
+	color: var(--color-brand-fore);
+}
