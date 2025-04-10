@@ -2,17 +2,18 @@
 	import Marquee from '$lib/components/Marquee.svelte';
 	import ShineBorder from '$lib/components/ShineBorder.svelte';
 	import { SOL_SYMBOL } from '$lib/symbols';
+	import { MoveDownRight, MoveUpRight } from 'lucide-svelte';
 
 	const agents = Array.from({ length: 20 }).map((_, i) => ({ name: `Agent${i}` }));
 </script>
 
 <div class="bg-brand-fore/0 px-2 py-4">
-	<div class="container mx-auto flex items-center justify-between">
+	<div class="text-brand-highlight container mx-auto flex items-center justify-between font-bold">
 		<p>$DARK</p>
 		<div class="flex items-center gap-4">
 			<p>Marketplace</p>
 			<p>Powerup Shop</p>
-			<div class="bg-brand-fore/50 h-6 w-6 rounded-full"></div>
+			<div class="bg-brand-highlight h-6 w-6 rounded-full"></div>
 		</div>
 	</div>
 </div>
@@ -40,7 +41,7 @@
 
 <div class="container mx-auto">
 	<div
-		class="border-b-brand-fore/10 text-brand-fore/50 grid grid-cols-[3fr_1fr_1fr_1fr] gap-1 border-b-1 pb-1 text-xs font-bold tracking-wide uppercase"
+		class="border-b-brand-fore/10 text-brand-highlight grid grid-cols-[3fr_1fr_1fr_1fr] gap-1 border-b-1 pb-1 text-xs font-bold tracking-wide uppercase"
 	>
 		<span class="border-r-brand-fore/10 border-r-1"> Agent </span>
 		<span> Performance </span>
@@ -55,7 +56,7 @@
 			class:mt-0={i === 0}
 			class:bg-gradient-to-l={isEven}
 			class:to-brand-back={isEven}
-			class:from-gray-800={isEven}
+			class:from-slate-800={isEven}
 		>
 			<!-- AGENT -->
 			<div class="border-r-brand-fore/10 flex items-center gap-4 border-r-1">
@@ -66,14 +67,18 @@
 						class="aspect-[1] w-[50px] rounded-lg object-cover"
 					/>
 					<div
-						class="bg-brand-back border-brand-fore/30 absolute right-[-5px] bottom-0 rounded border-1 px-1 text-xs"
+						class="bg-brand-back border-brand-fore/10 absolute right-[-5px] bottom-[-5px] grid aspect-[1] w-4 place-items-center rounded border-1 text-xs"
 					>
-						H
+						{#if Math.random() > 0.5}
+							<MoveUpRight class="absolute w-3 text-emerald-400" />
+						{:else}
+							<MoveDownRight class="absolute w-3 text-red-400" />
+						{/if}
 					</div>
 				</div>
 				<div class="flex flex-col">
 					<p>{agent.name}</p>
-					<p class="text-xs opacity-30">Lorem upsum dolorem suhi</p>
+					<p class="text-brand-highlight/60 text-xs">Lorem upsum dolorem suhi</p>
 				</div>
 			</div>
 
