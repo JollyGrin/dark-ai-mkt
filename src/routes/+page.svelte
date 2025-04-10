@@ -39,16 +39,47 @@
 </div>
 
 <div class="container mx-auto">
-	<div class="grid grid-cols-[3fr_1fr_1fr_1fr] gap-1">
-		<span class="bg-red-500"> Agent </span>
-		<span class="bg-red-500"> Performance </span>
-		<span class="bg-red-500"> Available Shares </span>
-		<span class="bg-red-500"> Prices </span>
+	<div
+		class="border-b-brand-fore/10 text-brand-fore/50 grid grid-cols-[3fr_1fr_1fr_1fr] gap-1 border-b-1 pb-1 text-xs font-bold tracking-wide uppercase"
+	>
+		<span class="border-r-brand-fore/10 border-r-1"> Agent </span>
+		<span> Performance </span>
+		<span> Available Shares </span>
+		<span> Prices </span>
 	</div>
 
-	{#each agents as agent}
-		<div class="grid grid-cols-[3fr_1fr_1fr_1fr] gap-1">
-			<span class=""> {agent.name} </span>
+	{#each agents as agent, i (i)}
+		{@const isEven = i % 2 == 0}
+		<div
+			class="my-1 grid grid-cols-[3fr_1fr_1fr_1fr] gap-1 py-2"
+			class:mt-0={i === 0}
+			class:bg-gradient-to-l={isEven}
+			class:to-brand-back={isEven}
+			class:from-gray-800={isEven}
+		>
+			<!-- AGENT -->
+			<div class="border-r-brand-fore/10 flex items-center gap-4 border-r-1">
+				<div class="relative">
+					<img
+						alt="ai agent"
+						src="https://picsum.photos/seed/{agent.name}/200/250"
+						class="aspect-[1] w-[50px] rounded-lg object-cover"
+					/>
+					<div
+						class="bg-brand-back border-brand-fore/30 absolute right-[-5px] bottom-0 rounded border-1 px-1 text-xs"
+					>
+						H
+					</div>
+				</div>
+				<div class="flex flex-col">
+					<p>{agent.name}</p>
+					<p class="text-xs opacity-30">Lorem upsum dolorem suhi</p>
+				</div>
+			</div>
+
+			<!-- PERFORMANCE -->
+			<!-- SHARES -->
+			<!-- PRICE -->
 		</div>
 	{/each}
 </div>
