@@ -5,6 +5,9 @@
 </script>
 
 <svelte:head>
+  <title>
+    Dark Plays: About
+  </title>
 	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8" onload={()=>console.log('loaded')}></script>
 </svelte:head>
 
@@ -45,7 +48,18 @@
 			/>
 			<span class="group-hover:underline"> Daemon </span>
 		</a>
+
+		<a href="https://daemon.spacemangaming.com/#/" class="group flex items-center gap-1">
+			<img
+				src="https://zkga.me/public/favicons.ico/favicon-32x32.png"
+				alt="daemon"
+				class="w-5 rounded-full transition-all group-hover:scale-125"
+			/>
+			<span class="group-hover:underline"> DarkForest (zkga.me) </span>
+		</a>
 	</div>
+
+
 	<blockquote class="twitter-tweet" data-theme="dark" data-dnt="true" align="center">
 		<p lang="en" dir="ltr">
 			okay, soft launching <a

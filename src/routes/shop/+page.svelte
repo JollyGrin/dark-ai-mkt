@@ -6,6 +6,10 @@
 	let modalIsOpen = $state(false);
 </script>
 
+<svelte:head>
+	<title>DARK Plays: Shop</title>
+</svelte:head>
+
 <!-- SNIPPETS -->
 
 {#snippet tile(text: string, price: string, videoSrc: string)}

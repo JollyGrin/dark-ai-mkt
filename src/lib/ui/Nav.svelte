@@ -2,7 +2,7 @@
 	import { base } from '$app/paths';
 	import { page } from '$app/state';
 	import ShineBorder from '$lib/components/ShineBorder.svelte';
-	import { BadgeInfo, ShieldQuestion } from 'lucide-svelte';
+	import { BadgeInfo } from 'lucide-svelte';
 
 	const isMarketplace = $derived(page.url.pathname === base + '/');
 	const isShop = $derived(page.url.pathname === base + '/shop');

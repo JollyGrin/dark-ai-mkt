@@ -6,6 +6,10 @@
 	const agents = Array.from({ length: 20 }).map((_, i) => ({ name: `Agent${i}` }));
 </script>
 
+<svelte:head>
+	<title>DARK Plays: Marketplace</title>
+</svelte:head>
+
 <div class="container mx-auto">
 	<!-- MARQUEE -->
 	<div class="mb-6 py-6">
