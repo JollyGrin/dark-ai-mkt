@@ -6,6 +6,6 @@
 </script>
 
 <Nav />
-<div class="h-[calc(100svh-59px)] overflow-y-scroll">
+<div class="h-[calc(100svh-70px)] overflow-y-auto">
 	{@render children()}
 </div>
