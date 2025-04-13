@@ -1,19 +1,27 @@
 <script lang="ts">
 	import { MoveDownRight, MoveUpRight } from 'lucide-svelte';
+	import ModalTrade from './ModalTrade.svelte';
 
 	let {
 		isEven = true,
 		agent,
 		isFirst = false
 	}: { isEven: boolean; agent: any; isFirst: boolean } = $props();
+
+	let isOpen = $state(false);
 </script>
 
-<div
-	class="my-1 grid grid-cols-1 items-center gap-1 py-2 md:grid-cols-[3fr_1fr_1fr_1fr]"
+{#if isOpen}
+	<ModalTrade onClose={() => (isOpen = false)} />
+{/if}
+
+<button
+	class="my-1 grid w-full cursor-pointer grid-cols-1 items-center justify-items-start gap-1 self-start py-2 hover:opacity-90 md:grid-cols-[3fr_1fr_1fr_1fr]"
 	class:mt-0={isFirst}
 	class:bg-gradient-to-l={isEven}
 	class:to-brand-back={isEven}
 	class:from-slate-800={isEven}
+	onclick={() => (isOpen = true)}
 >
 	<!-- AGENT -->
 	<div
@@ -35,7 +43,7 @@
 				{/if}
 			</div>
 		</div>
-		<div class="flex flex-col">
+		<div class="flex flex-col md:items-start">
 			<p>{agent.name}</p>
 			<p class="text-brand-highlight/60 text-xs">Lorem upsum dolorem suhi</p>
 		</div>
@@ -47,4 +55,4 @@
 	<span> shares </span>
 	<!-- PRICE -->
 	<span> price </span>
-</div>
+</button>
