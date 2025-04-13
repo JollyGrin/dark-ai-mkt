@@ -3,9 +3,16 @@
 	import { page } from '$app/state';
 	import ShineBorder from '$lib/components/ShineBorder.svelte';
 	import { BadgeInfo } from 'lucide-svelte';
+	import { walletStore } from '$lib/wallet/walletStore.svelte';
+	import { connectWallet, disconnectWallet } from '$lib/wallet/helpers/connect-wallet';
 
 	const isMarketplace = $derived(page.url.pathname === base + '/');
 	const isShop = $derived(page.url.pathname === base + '/shop');
+
+	function truncateAddress(address: string) {
+		if (!address) return '';
+		return `${address.slice(0, 4)}...${address.slice(-4)}`;
+	}
 </script>
 
 <div class="bg-brand-fore/0 px-2 py-4">
@@ -32,9 +39,16 @@
 			<a href="{base}/shop" class:text-brand-fore={isShop} class:hover:opacity-70={!isShop}>Shop</a>
 			<a href="{base}/about" class="text-xs font-thin hover:opacity-70"><BadgeInfo /></a>
 			<button
-				class="border-brand-highlight/50 text-brand-fore hover:border-brand-fore rounded border-1 px-2 py-1 font-normal transition-all"
+				onclick={async () => {
+					if (!$walletStore.walletAddress) {
+						await connectWallet();
+					} else await disconnectWallet();
+				}}
+				class="border-brand-highlight/50 hover:bg-brand-fore hover:text-brand-back cursor-pointer rounded border-1 px-3 py-1 transition-all"
 			>
-				Connect
+				{$walletStore.walletAddress
+					? truncateAddress($walletStore.walletAddress)
+					: 'Connect Wallet'}
 			</button>
 		</div>
 	</div>
