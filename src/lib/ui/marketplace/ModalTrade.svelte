@@ -82,14 +82,14 @@
 <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
 	<!-- Modal Dialog -->
 	<dialog
-		class="bg-brand-back text-brand-fore mx-4 h-full w-full max-w-2xl rounded-lg p-0 shadow-lg open:block md:max-h-[515px]"
+		class="bg-brand-back text-brand-fore mx-4 h-full w-full max-w-2xl rounded-lg p-0 shadow-lg open:block md:max-h-[535px]"
 		open
 		aria-labelledby="modal-title"
 	>
 		<!-- Modal Body -->
-		<div class="grid h-full grid-cols-1 md:grid-cols-2">
+		<div class="grid h-full grid-cols-1 overflow-auto md:grid-cols-2">
 			<!-- Left Column: Stats and Metadata -->
-			<div class="relative bg-black/20 p-6 md:overflow-clip">
+			<div class="md:max-h-auto relative bg-black/20 p-6 md:overflow-clip">
 				<div class="flex flex-col gap-4">
 					<!-- Token Information Header -->
 					<div class="flex items-center justify-between">
@@ -176,7 +176,7 @@
 
 					<!-- Chart Placeholder -->
 					<div
-						class="border-brand-highlight/20 mt-4 flex h-58 items-center justify-center rounded border-1 bg-black/30 p-3"
+						class="border-brand-highlight/20 relative mt-4 flex h-58 items-center justify-center rounded border-1 bg-black/30 p-3"
 					>
 						<!-- <p class="text-brand-highlight/70 text-xs">Price Chart (Coming Soon)</p> -->
 						<RadarChart />
@@ -185,7 +185,7 @@
 			</div>
 
 			<!-- Right Column: Trade Window -->
-			<div class="relative flex flex-col overflow-auto px-6 py-4">
+			<div class="relative flex flex-col px-6 py-4 md:overflow-auto">
 				<!-- Close Button -->
 				<button
 					class="absolute top-2 right-2 cursor-pointer rounded-full bg-black/30 px-2 py-2 transition-all hover:scale-110"
