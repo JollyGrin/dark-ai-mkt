@@ -45,7 +45,7 @@
 {/if}
 
 <button
-	class="my-1 grid w-full cursor-pointer grid-cols-1 items-center justify-items-start gap-1 self-start py-2 hover:opacity-90 md:grid-cols-[3fr_1fr_1fr_1fr]"
+	class="my-1 grid w-full cursor-pointer grid-cols-1 items-center justify-items-start gap-3 self-start py-2 hover:opacity-90 md:grid-cols-[3fr_1fr_1fr_1fr] md:gap-1"
 	class:mt-0={isFirst}
 	class:bg-gradient-to-l={isEven}
 	class:to-brand-back={isEven}
@@ -81,7 +81,7 @@
 	<!-- PERFORMANCE -->
 	<div class="flex w-full justify-center gap-1 md:justify-start">
 		{#each selectedTags as tag}
-			<span class="rounded px-2 py-0.5 text-xs {tag.class}">{tag.label}</span>
+			<span class="rounded px-2 py-0.5 text-xs {tag.class} w-fit">{tag.label}</span>
 		{/each}
 	</div>
 	<!-- SHARES -->
