@@ -79,7 +79,7 @@
 	</div>
 
 	<!-- PERFORMANCE -->
-	<div class="flex justify-center gap-1 md:justify-start">
+	<div class="flex w-full justify-center gap-1 md:justify-start">
 		{#each selectedTags as tag}
 			<span class="rounded px-2 py-0.5 text-xs {tag.class}">{tag.label}</span>
 		{/each}
@@ -100,7 +100,7 @@
 		</div>
 	</div>
 	<!-- PRICE -->
-	<div class="flex flex-col items-center justify-center md:items-start">
+	<div class="flex w-full flex-col items-center justify-center md:items-start">
 		<span class="flex items-center gap-1 text-sm font-medium">
 			{SOL_SYMBOL}
 			{currentPrice.toFixed(2)}
