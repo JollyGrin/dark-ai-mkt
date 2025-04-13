@@ -54,7 +54,7 @@
 >
 	<!-- AGENT -->
 	<div
-		class="border-r-brand-fore/10 flex items-center justify-center gap-4 border-r-1 md:justify-start"
+		class="border-r-brand-fore/10 flex w-full items-center justify-center gap-4 border-r-1 md:justify-start"
 	>
 		<div class="relative">
 			<img
@@ -85,11 +85,19 @@
 		{/each}
 	</div>
 	<!-- SHARES -->
-	<div class="flex flex-col items-center justify-center md:items-start">
+	<div class="flex w-full flex-col items-center justify-center md:items-start">
 		<span class="text-sm font-medium">{sharesAvailable.toLocaleString()}</span>
-		<span class="text-brand-highlight/60 text-xs"
-			>{Math.round((sharesAvailable / sharesTotal) * 100)}% Available</span
-		>
+		<div class="mt-1 w-full max-w-[80px]">
+			<div class="relative h-1.5 w-full overflow-hidden rounded-full bg-black/40">
+				<div
+					class="bg-brand-highlight/70 absolute top-0 left-0 h-full rounded-full"
+					style="width: {Math.round((sharesAvailable / sharesTotal) * 100)}%"
+				></div>
+			</div>
+			<span class="text-brand-highlight/60 mt-0.5 block text-[10px]"
+				>{Math.round((sharesAvailable / sharesTotal) * 100)}% Available</span
+			>
+		</div>
 	</div>
 	<!-- PRICE -->
 	<div class="flex flex-col items-center justify-center md:items-start">
