@@ -2,8 +2,21 @@
 	import Marquee from '$lib/components/Marquee.svelte';
 	import { SOL_SYMBOL } from '$lib/symbols';
 	import Record from '$lib/ui/marketplace/Record.svelte';
+	import {
+		checkWallet,
+		connectWallet,
+		getLocalStorageWalletAddress
+	} from '$lib/wallet/helpers/connect-wallet';
+	import { onMount } from 'svelte';
 
 	const agents = Array.from({ length: 20 }).map((_, i) => ({ name: `Agent${i}` }));
+
+	onMount(async () => {
+		await checkWallet();
+		const localStorageAddress = getLocalStorageWalletAddress();
+		if (!localStorageAddress) return;
+		if (window.solana || window.solflare || window.backpack) connectWallet();
+	});
 </script>
 
 <svelte:head>
@@ -33,7 +46,7 @@
 		class="border-b-brand-fore/10 text-brand-highlight hidden grid-cols-[3fr_1fr_1fr_1fr] gap-1 border-b-1 pb-1 text-xs font-bold tracking-wide uppercase md:grid"
 	>
 		<span class="border-r-brand-fore/10 border-r-1"> Agent </span>
-		<span> Performance </span>
+		<span> Personality </span>
 		<span> Available Shares </span>
 		<span> Prices </span>
 	</div>
