@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { X, ArrowDownUp, TrendingUp, TrendingDown, Circle } from 'lucide-svelte';
 	import { USDC_SYMBOL, SOL_SYMBOL } from '$lib/symbols';
+	import RadarChart from '$lib/components/RadarChart.svelte';
 
 	let { onClose }: { onClose(): void } = $props();
 	let activeTab: 'buy' | 'sell' = $state('sell');
@@ -8,7 +9,7 @@
 	let estimatedReturn = $state('0.00');
 
 	// Mock data for the token
-	const tokenData = {
+	const buyTokenData = {
 		name: 'USDC',
 		symbol: USDC_SYMBOL,
 		price: 1.0,
@@ -20,8 +21,8 @@
 		allTimeLow: 0.98
 	};
 
-	const buyTokenData = {
-		name: 'Solana',
+	const tokenData = {
+		name: 'Agent Share',
 		symbol: SOL_SYMBOL,
 		price: 169.42,
 		change24h: 2.3,
@@ -81,14 +82,14 @@
 <div class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm">
 	<!-- Modal Dialog -->
 	<dialog
-		class="bg-brand-back text-brand-fore mx-4 w-full max-w-2xl rounded-lg p-0 shadow-lg open:block md:max-h-[550px]"
+		class="bg-brand-back text-brand-fore mx-4 h-full w-full max-w-2xl rounded-lg p-0 shadow-lg open:block md:max-h-[515px]"
 		open
 		aria-labelledby="modal-title"
 	>
 		<!-- Modal Body -->
 		<div class="grid h-full grid-cols-1 md:grid-cols-2">
 			<!-- Left Column: Stats and Metadata -->
-			<div class="relative overflow-auto bg-black/20 p-6">
+			<div class="relative bg-black/20 p-6 md:overflow-clip">
 				<div class="flex flex-col gap-4">
 					<!-- Token Information Header -->
 					<div class="flex items-center justify-between">
@@ -175,9 +176,10 @@
 
 					<!-- Chart Placeholder -->
 					<div
-						class="border-brand-highlight/20 mt-4 flex h-48 items-center justify-center rounded border-1 bg-black/30 p-3"
+						class="border-brand-highlight/20 mt-4 flex h-58 items-center justify-center rounded border-1 bg-black/30 p-3"
 					>
-						<p class="text-brand-highlight/70 text-xs">Price Chart (Coming Soon)</p>
+						<!-- <p class="text-brand-highlight/70 text-xs">Price Chart (Coming Soon)</p> -->
+						<RadarChart />
 					</div>
 				</div>
 			</div>

@@ -22,7 +22,16 @@
 		Clever: 0.8
 	} as const;
 
-	let { data }: { data: CommanderDTO['personality'] } = $props();
+	// Define props with default values using mock data
+let { 
+	data = {
+		combat: 'Balanced',
+		tech: 'High Tech',
+		spending: 'Spender',
+		risk: 'Risk Taker',
+		intelligence: 'Clever'
+	}
+} = $props<{ data?: Record<string, string> }>();
 
 	// Convert personality traits to numerical values for the radar chart
 	const traitValues = $derived(() => {
@@ -32,7 +41,7 @@
 			const angle = (i * 2 * Math.PI) / axes.length - Math.PI / 2;
 			let value = 0;
 			// Get the trait value, defaulting to balanced/average if not found
-			const trait = data[axis.toLowerCase() as keyof typeof data];
+			const trait = data[axis.toLowerCase()];
 			value = PERSONALITY_VALUES[trait] ?? (axis === 'Intelligence' ? 0.5 : 0.6);
 			return {
 				axis,
