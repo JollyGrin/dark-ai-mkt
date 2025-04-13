@@ -2,8 +2,21 @@
 	import Marquee from '$lib/components/Marquee.svelte';
 	import { SOL_SYMBOL } from '$lib/symbols';
 	import Record from '$lib/ui/marketplace/Record.svelte';
+	import {
+		checkWallet,
+		connectWallet,
+		getLocalStorageWalletAddress
+	} from '$lib/wallet/helpers/connect-wallet';
+	import { onMount } from 'svelte';
 
 	const agents = Array.from({ length: 20 }).map((_, i) => ({ name: `Agent${i}` }));
+
+	onMount(async () => {
+		await checkWallet();
+		const localStorageAddress = getLocalStorageWalletAddress();
+		if (!localStorageAddress) return;
+		if (window.solana || window.solflare || window.backpack) connectWallet();
+	});
 </script>
 
 <svelte:head>
